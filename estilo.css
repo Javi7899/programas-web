@@ -1,0 +1,30 @@
+/* Programas: un editor oscuro, colores de sintaxis y verde de terminal. */
+:root {
+  --canvas: #F3F5FA; --surface: #FFFFFF; --ink: #161A28; --subtle: #5D6683;
+  --hairline: #DCE1EE; --brand: #0AA662; --deep: #0E1220;
+  --kw: #C792EA; --fn: #82AAFF; --str: #C3E88D; --num: #F78C6C;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --canvas: #0B0E18; --surface: #151A2C; --ink: #E6EAF2; --subtle: #8A93AE; --hairline: #262D48; --brand: #3BE395; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font: 17px/1.65 -apple-system, "SF Pro Text", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+code, .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+/* Nada de backdrop-filter en una cabecera fija: oscurece la página de debajo. */
+header { background: var(--deep); color: #E6EAF2; padding: 52px 20px 40px; text-align: center; }
+header .code { display: inline-block; text-align: left; font: 15px/1.7 ui-monospace, "SF Mono", Menlo, monospace; background: #151A2C; border: 1px solid #2A3252; border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; }
+header .code .on { background: rgba(59,227,149,.16); box-shadow: inset 3px 0 #3BE395; margin: 0 -18px; padding: 0 18px; display: block; }
+.kw { color: var(--kw); } .fn { color: var(--fn); } .str { color: var(--str); } .num { color: var(--num); }
+header h1 { margin: 0 0 6px; font-size: clamp(30px, 7vw, 44px); letter-spacing: -0.02em; }
+header p { margin: 0; opacity: .8; }
+nav { display: flex; gap: 18px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+nav a { color: #E6EAF2; opacity: .85; text-decoration: none; border-bottom: 1px solid rgba(230,234,242,.35); padding-bottom: 2px; }
+nav a:hover { opacity: 1; }
+main { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+h2 { font-size: 24px; margin: 44px 0 12px; letter-spacing: -0.01em; }
+h3 { font-size: 18px; margin: 28px 0 6px; }
+.subtle { color: var(--subtle); }
+ul { padding-left: 22px; } li { margin-bottom: 8px; }
+.card { background: var(--surface); border: 1px solid var(--hairline); border-radius: 14px; padding: 20px 22px; margin: 20px 0; box-shadow: 0 3px 10px rgba(0,0,0,.05); }
+a { color: var(--brand); }
+footer { border-top: 1px solid var(--hairline); margin-top: 56px; padding-top: 22px; color: var(--subtle); font-size: 14px; }
